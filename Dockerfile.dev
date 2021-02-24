@@ -1,0 +1,16 @@
+FROM node:alpine
+WORKDIR /app
+COPY package.json ./
+RUN npm install 
+
+# COPY . ./ 
+CMD ["npm", "run", "start"]
+
+# Copy statements are set up so that it is unnecessary to have 
+# a node_modules dir in the source code dir
+# the npm install will build one inside the container
+# based on package.json
+
+# dev env does not require a second copy statement since we 
+# are maping the app dir (in container) to the source code
+# dir (in local machine)
