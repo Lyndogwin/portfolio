@@ -1,8 +1,13 @@
 import React from 'react';
+import emailjs from 'emailjs-com';
+
+import {init} from 'emailjs-com';
+init("user_lIakUgFS2sHCfOIFlFV43");
 
 class Contact extends React.Component {
   constructor(props) {
     super(props);
+
     
     this.state = { 
       name: "",
@@ -10,12 +15,49 @@ class Contact extends React.Component {
       feedback: ""
     };
   }
+  
+  sendMessage(event){
+    event.preventDefault(); 
+    // if (!this.validateMail()) { 
+    //   return; 
+    // } 
+    
+    
+    
+    const templateParams = { 
+      from_name: this.state.name, 
+      email: this.state.email, 
+      to_name: "Brandon", 
+      feedback: this.state.feedback 
+    };
+
+    emailjs
+      .send("service_j9zwru8","template_d9sifmt", templateParams)
+      .then(
+        function(response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function(err) {
+          console.log("Your message was not able to be sent",err);
+        }
+      );
+      this.setState({
+        name: "",
+        email: "",
+        feedback: ""
+      });
+  }
 
   handleInputChange(event){
     event.preventDefault();
+    
     const target = event.target;
-    const name = target.name;
-    const value = target.value
+    const id = target.id;
+    const value = target.value;
+
+    console.log(`${id} : ${value}`)
+
+    this.setState({[id]: value});
   }
 
   render () {
@@ -29,7 +71,7 @@ class Contact extends React.Component {
                 id="name" 
                 className="input" 
                 type="text" 
-                onchange={this.handleInputChange.bind(this)} 
+                onChange={this.handleInputChange.bind(this)} 
                 value={this.state.name}
                 placeholder="e.g Alex Smith"
               />
@@ -43,7 +85,7 @@ class Contact extends React.Component {
                 id="email" 
                 className="input" 
                 type="email" 
-                onchange={this.handleInputChange.bind(this)} 
+                onChange={this.handleInputChange.bind(this)} 
                 value={this.state.email}
                 placeholder="e.g. alexsmith@gmail.com"
               />
@@ -56,7 +98,7 @@ class Contact extends React.Component {
               <textarea 
                 id="feedback" 
                 className="textarea" 
-                onchange={this.handleInputChange.bind(this)} 
+                onChange={this.handleInputChange.bind(this)} 
                 value={this.state.feedback}
                 placeholder="Textarea"
               />
@@ -66,7 +108,10 @@ class Contact extends React.Component {
           
           <div className="field is-grouped">
             <div className="control">
-              <button className="button is-link">Send</button>
+              <button 
+                className="button is-link"
+                onClick={this.sendMessage.bind(this)}
+              >Send</button>
             </div>
           </div>
         </form>
