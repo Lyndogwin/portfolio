@@ -1,5 +1,13 @@
 import './App.css';
 import React from 'react';
+import * as Routes from './routes';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink
+} from "react-router-dom"
 
 class App extends React.Component {
   render () {
@@ -18,14 +26,14 @@ class App extends React.Component {
             </a>
           </div>
 
-          <div id="navbarBasicExample" className="navbar-menu">
+          <div id="navbarOptions" className="navbar-menu">
             <div className="navbar-start">
               <a className="navbar-item" href="/">
                 Home
               </a>
 
-              <a className="navbar-item" href="/documentation">
-                Documentation
+              <a className="navbar-item" href="/contact">
+                Contact 
               </a>
 
               <div className="navbar-item has-dropdown is-hoverable">
@@ -35,36 +43,29 @@ class App extends React.Component {
 
                 <div className="navbar-dropdown">
                   <a className="navbar-item">
-                    About
+                    GitHub
                   </a>
                   <a className="navbar-item">
-                    Jobs
-                  </a>
-                  <a className="navbar-item">
-                    Contact
+                    Linkdin
                   </a>
                   <hr className="navbar-divider"/>
                   <a className="navbar-item">
-                    Report an issue
+                    Report an issue with this site
                   </a>
                 </div>
               </div>
             </div>
 
             <div className="navbar-end">
-              <div className="navbar-item">
-                <div className="buttons">
-                  <a className="button is-primary">
-                    <strong>Sign up</strong>
-                  </a>
-                  <a className="button is-light">
-                    Log in
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </nav>
+        <Router>
+          <Switch>
+            <Route path="/" component={Routes.Home} exact/>
+            <Route path="/contact" component={Routes.Contact} />
+          </Switch>
+        </Router>
       </div>
     );
   }
