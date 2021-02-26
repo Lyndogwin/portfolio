@@ -2,7 +2,8 @@ import React from 'react';
 import emailjs from 'emailjs-com';
 
 import {init} from 'emailjs-com';
-init("user_lIakUgFS2sHCfOIFlFV43");
+const EMAILJS_ACCOUNTID = process.env.REACT_APP_EMAILJS_ACCOUNTID;
+init(`${EMAILJS_ACCOUNTID}`);
 
 class Contact extends React.Component {
   constructor(props) {
@@ -21,9 +22,10 @@ class Contact extends React.Component {
     // if (!this.validateMail()) { 
     //   return; 
     // } 
-    
-    
-    
+
+    const EMAILJS_SERVICEID = process.env.REACT_APP_EMAILJS_SERVICEID; 
+    const EMAILJS_TEMPLATEID = process.env.REACT_APP_EMAILJS_TEMPLATEID;
+
     const templateParams = { 
       from_name: this.state.name, 
       email: this.state.email, 
@@ -32,7 +34,7 @@ class Contact extends React.Component {
     };
 
     emailjs
-      .send("service_j9zwru8","template_d9sifmt", templateParams)
+      .send(EMAILJS_SERVICEID,EMAILJS_TEMPLATEID, templateParams)
       .then(
         function(response) {
           console.log("SUCCESS!", response.status, response.text);
