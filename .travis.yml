@@ -20,7 +20,7 @@ deploy: # env has been killed
   bucket_name: "elasticbeanstalk-us-east-2-179220408535" # https://s3.console.aws.amazon.com/s3/buckets/elasticbeanstalk-us-east-2-179220408535/?region=us-east-2&tab=overview
   bucket_path: "Portfolio2" # should be the same as the app by default
   on:
-    branch: master # only deply when changes to master are detected.
+    branch: main # only deply when changes to master are detected.
 
   # keys to AWS access
   access_key_id: $AWS_BEAN_ACCESS_KEY # Travis CI env variable in repo build (input via travis console)
