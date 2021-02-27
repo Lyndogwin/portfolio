@@ -7,8 +7,8 @@ services:
 before_install:
   - docker build -t lyndogwin/portfolio -f Dockerfile.dev . # any tag can be used here
 # test in de env (container)
-script:
-  - docker run -e CI=true lyndogwin/portfolio npm run test # https://create-react-app.dev/docs/running-tests/#linux-macos-bash 
+# script:
+#   - docker run -e CI=true lyndogwin/portfolio npm run test # https://create-react-app.dev/docs/running-tests/#linux-macos-bash 
 
 deploy: # env has been killed
   # Note: elastic will use the default Dockerfile for the deployment
