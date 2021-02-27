@@ -10,6 +10,26 @@ import {
 } from "react-router-dom"
 
 class App extends React.Component {
+  state = {
+    active_burger: false,
+    active_sentax: ""
+  }
+
+  expandNav = () => { 
+    if (!this.state.active_burger){
+      this.setState({
+        active_sentax: "is-active",
+        active_burger: true
+      });
+    }
+    else{
+      this.setState({
+        active_sentax:"",
+        active_burger:false
+      })
+    }
+  }
+
   render () {
     return (
       <div className="App">
@@ -19,14 +39,20 @@ class App extends React.Component {
               <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"/>
             </a>
 
-            <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <a role="button" 
+              className={`navbar-burger ${this.state.active_sentax}`} 
+              aria-label="menu" 
+              aria-expanded="false" 
+              data-target="navbarOptions"
+              onClick={this.expandNav}
+            >
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
             </a>
           </div>
 
-          <div id="navbarOptions" className="navbar-menu">
+          <div id="navbarOptions" className={`navbar-menu ${this.state.active_sentax}`}>
             <div className="navbar-start">
               <a className="navbar-item" href="/">
                 Home
