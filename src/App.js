@@ -5,8 +5,7 @@ import * as Routes from './routes';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  NavLink
+  Route
 } from "react-router-dom"
 
 class App extends React.Component {
@@ -36,7 +35,7 @@ class App extends React.Component {
         <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
           <div className="navbar-brand">
             <a className="navbar-item" href="https://bulma.io">
-              <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"/>
+              <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" alt="Logo"/>
             </a>
 
             <a role="button" 
@@ -68,10 +67,10 @@ class App extends React.Component {
                 </a>
 
                 <div className="navbar-dropdown">
-                  <a className="navbar-item">
+                  <a className="navbar-item" href="https://github.com/Lyndogwin">
                     GitHub
                   </a>
-                  <a className="navbar-item">
+                  <a className="navbar-item" href="www.linkedin.com/in/brandonbost0110">
                     Linkdin
                   </a>
                   <hr className="navbar-divider"/>
