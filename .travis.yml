@@ -10,11 +10,11 @@ before_install:
 # script:
 #   - docker run -e CI=true lyndogwin/portfolio npm run test # https://create-react-app.dev/docs/running-tests/#linux-macos-bash 
 
-deploy: # env has been killed
+deploy: 
   # Note: elastic will use the default Dockerfile for the deployment
   provider: elasticbeanstalk
   region: "us-east-2" # http://dockerreact-env.eba-bkhnqmpw.us-east-2.elasticbeanstalk.com/
-  app: "Portfolio2"
+  app: "portfolio2"
   env: "Portfolio2-env"
   # s3 bucket on aws (aws volume I believe)
   bucket_name: "elasticbeanstalk-us-east-2-179220408535" # https://s3.console.aws.amazon.com/s3/buckets/elasticbeanstalk-us-east-2-179220408535/?region=us-east-2&tab=overview

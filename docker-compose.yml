@@ -12,3 +12,9 @@ services:
     stdin_open: true
     tty: true
   # TODO add build service
+
+  production:
+    build:
+      context: .
+    ports:
+      - "80:80"

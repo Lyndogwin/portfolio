@@ -5,6 +5,9 @@ import {init} from 'emailjs-com';
 const EMAILJS_ACCOUNTID = process.env.REACT_APP_EMAILJS_ACCOUNTID;
 init(`${EMAILJS_ACCOUNTID}`);
 
+// https://blog.mailtrap.io/react-send-email/
+// https://medium.com/kirsten-werner/using-a-react-form-to-send-information-directly-to-your-email-2c9666f0d63a
+
 class Contact extends React.Component {
   constructor(props) {
     super(props);
