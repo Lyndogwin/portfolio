@@ -30,7 +30,7 @@ jobs:
         run: npm install
         
       - name: create static files
-        run: npm run build
+        run: CI=false npm run build
         
         
       - name: Deploy 🚀
