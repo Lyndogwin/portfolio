@@ -3,7 +3,7 @@ import React from 'react';
 import * as Routes from './routes';
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route
 } from "react-router-dom"
@@ -38,7 +38,7 @@ class App extends React.Component {
               <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" alt="Logo"/>
             </a>
 
-            <a role="button" 
+            <a role="button"  
               className={`navbar-burger ${this.state.active_sentax}`} 
               aria-label="menu" 
               aria-expanded="false" 
