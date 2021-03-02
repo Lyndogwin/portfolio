@@ -5,6 +5,7 @@ import * as Routes from './routes';
 import {
   HashRouter as Router,
   Switch,
+  Link,
   Route
 } from "react-router-dom"
 
@@ -57,7 +58,8 @@ class App extends React.Component {
                 Home
               </a>
 
-              <a className="navbar-item" href="/contact">
+              <a className="navbar-item" href="/#/contact">
+
                 Contact 
               </a>
 
