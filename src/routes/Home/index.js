@@ -10,7 +10,7 @@ class Home extends React.Component {
               Brandon Bost 
             </p>
             <p className="subtitle">
-              Software Engineer and Video game developer
+              Software Engineer 
             </p>
           </div>
         </section>
