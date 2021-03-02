@@ -54,11 +54,11 @@ class App extends React.Component {
 
           <div id="navbarOptions" className={`navbar-menu ${this.state.active_sentax}`}>
             <div className="navbar-start">
-              <a className="navbar-item" href="/">
+              <a className="navbar-item" href="/#/portfolio">
                 Home
               </a>
 
-              <a className="navbar-item" href="/portfolio/#/contact">
+              <a className="navbar-item" href="/#/contact">
 
                 Contact 
               </a>
