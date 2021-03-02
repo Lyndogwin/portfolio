@@ -85,10 +85,10 @@ class App extends React.Component {
             </div>
           </div>
         </nav>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <Switch>
             <Route path="/" component={Routes.Home} exact/>
-            <Route path="/contact" component={Routes.Contact} />
+            <Route path="/contact/" component={Routes.Contact}/>
           </Switch>
         </Router>
       </div>
