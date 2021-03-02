@@ -58,7 +58,7 @@ class App extends React.Component {
                 Home
               </a>
 
-              <a className="navbar-item" href="/#/contact">
+              <a className="navbar-item" href="/portfolio/#/contact">
 
                 Contact 
               </a>
