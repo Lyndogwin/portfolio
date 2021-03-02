@@ -54,11 +54,11 @@ class App extends React.Component {
 
           <div id="navbarOptions" className={`navbar-menu ${this.state.active_sentax}`}>
             <div className="navbar-start">
-              <a className="navbar-item" href="/#/portfolio">
+              <a className="navbar-item" href="/portfolio/">
                 Home
               </a>
 
-              <a className="navbar-item" href="/#/contact">
+              <a className="navbar-item" href="/portfolio/#/contact">
 
                 Contact 
               </a>
@@ -87,7 +87,7 @@ class App extends React.Component {
             </div>
           </div>
         </nav>
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router basename="/portfolio">
           <Switch>
             <Route path="/" component={Routes.Home} exact/>
             <Route path="/contact/" component={Routes.Contact}/>
