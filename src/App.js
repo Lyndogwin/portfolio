@@ -72,7 +72,7 @@ class App extends React.Component {
                   <a className="navbar-item" href="https://github.com/Lyndogwin">
                     GitHub
                   </a>
-                  <a className="navbar-item" href="www.linkedin.com/in/brandonbost0110">
+                  <a className="navbar-item" href="https://www.linkedin.com/in/brandonbost0110">
                     Linkdin
                   </a>
                   <hr className="navbar-divider"/>
