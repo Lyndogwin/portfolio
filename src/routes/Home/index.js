@@ -7,6 +7,7 @@ class Home extends React.Component {
         <section className="hero is-success">
           <div className="hero-body">
             <p className="title">
+            <img src="./self_portrait.gif" width="32" height="64" alt="Logo"/>
               Brandon Bost 
             </p>
             <p className="subtitle">
