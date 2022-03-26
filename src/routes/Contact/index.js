@@ -105,7 +105,7 @@ class Contact extends React.Component {
                 className="textarea" 
                 onChange={this.handleInputChange.bind(this)} 
                 value={this.state.feedback}
-                placeholder="Textarea"
+                placeholder="Hello! How are you? ..."
               />
 
             </div>
