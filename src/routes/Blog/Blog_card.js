@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Post extends React.Component {
+class Blog_card extends React.Component {
   render () {
     return(
       <div>

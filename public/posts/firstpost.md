@@ -3,4 +3,4 @@
 ## Most Noteable options
 |Parser | Discription|
 |-------|------------|
-|Marks | for general usage with many frameworks|
+|Marks | Markdown parser for general usage with many frameworks|
