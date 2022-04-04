@@ -19,6 +19,11 @@ class Blog extends React.Component {
     const markdownFiles = importAll(require.context('../../posts',false, /\.md$/)) //the context module returns a function 
     this.setState({posts: markdownFiles})
     console.log(markdownFiles)
+    //////
+    const posts = await Promise.all(markdownFiles.map((file) => fetch(file).then((res) => res.text())))
+    .catch((err) => console.error(err))
+
+    this.setState((state) => ({...state, posts}));
   }
   
   render () {
