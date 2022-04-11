@@ -1,6 +1,7 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
-class Blog_card extends React.Component {
+class BlogCard extends React.Component {
   state = {
     title: "Post title",
     content:"This is a Blog post card"
@@ -23,7 +24,7 @@ class Blog_card extends React.Component {
                 <p>
                   <strong>{this.state.title}</strong>
                   <br></br>
-                  {this.state.content}
+                  <ReactMarkdown source={this.state.content}/>
                 </p>
               </div>
             </div>
@@ -34,4 +35,4 @@ class Blog_card extends React.Component {
     )
   }
 }
-export default Blog_card;
+export default BlogCard;

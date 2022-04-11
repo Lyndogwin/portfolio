@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import Blog_card from './Blog_card';
+import BlogCard from './BlogCard';
 
 
 class Blog extends React.Component {
@@ -12,7 +12,7 @@ class Blog extends React.Component {
     console.log("Grabing posts");
   }
   
-  componentDidMount = () => {
+  async componentDidMount() {
     this.grabPosts();
     // Grab all filenames with extention ".md" from the posts dir under src
     const importAll = (r) => r.keys().map(r);
@@ -23,7 +23,11 @@ class Blog extends React.Component {
     const posts = await Promise.all(markdownFiles.map((file) => fetch(file).then((res) => res.text())))
     .catch((err) => console.error(err))
 
-    this.setState((state) => ({...state, posts}));
+    console.log(posts);
+
+    this.setState({
+      posts: posts
+    });
   }
   
   render () {
@@ -31,7 +35,11 @@ class Blog extends React.Component {
       <div>
         <div className="columns">
           <div className="column is-one-third">
-            <Blog_card title="injected title" content="injected content"/>
+            {
+              this.state.posts.map((post, idx) => (
+                <BlogCard title={idx} content={post}/>
+              ))
+            }
           </div> 
         </div>
         
