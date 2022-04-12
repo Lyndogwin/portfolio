@@ -10,5 +10,5 @@
 I want to minimize confusion during the rendering process while seemslessly untilizing the 
 Bulma CSS framework. Lets begin testing...
 
-```javascript
-```
+### Testing results
+after trying out react-markdown, I decided to go with it as my markdown renderer. It required minimal tinkering.

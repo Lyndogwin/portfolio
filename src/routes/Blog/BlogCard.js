@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 class BlogCard extends React.Component {
   state = {
@@ -24,7 +25,10 @@ class BlogCard extends React.Component {
                 <p>
                   <strong>{this.state.title}</strong>
                   <br></br>
-                  <ReactMarkdown source={this.state.content}/>
+                  {/* {this.state.content}      */}
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {this.state.content}
+                  </ReactMarkdown>
                 </p>
               </div>
             </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import BlogCard from './BlogCard';
 
 
@@ -8,22 +7,20 @@ class Blog extends React.Component {
     posts: []
   } 
   
-  grabPosts = () => {
+  grabFileNames = () => {
     console.log("Grabing posts");
-  }
-  
-  async componentDidMount() {
-    this.grabPosts();
     // Grab all filenames with extention ".md" from the posts dir under src
     const importAll = (r) => r.keys().map(r);
     const markdownFiles = importAll(require.context('../../posts',false, /\.md$/)) //the context module returns a function 
-    this.setState({posts: markdownFiles})
-    console.log(markdownFiles)
-    //////
+    return markdownFiles;
+  }
+  
+  async componentDidMount() {
+    const markdownFiles = this.grabFileNames();
+
+    // Loop across the filenames using map, then fetch each file, then grab text, then store in array named 'posts'... ok?
     const posts = await Promise.all(markdownFiles.map((file) => fetch(file).then((res) => res.text())))
     .catch((err) => console.error(err))
-
-    console.log(posts);
 
     this.setState({
       posts: posts
@@ -42,7 +39,6 @@ class Blog extends React.Component {
             }
           </div> 
         </div>
-        
       </div>
     )
   }
