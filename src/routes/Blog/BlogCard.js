@@ -23,9 +23,6 @@ class BlogCard extends React.Component {
             <div className="media-content">
               <div className="content">
                 <p>
-                  <strong>{this.state.title}</strong>
-                  <br></br>
-                  {/* {this.state.content}      */}
                   <ReactMarkdown remarkPlugins={[remarkGfm]}>
                     {this.state.content}
                   </ReactMarkdown>

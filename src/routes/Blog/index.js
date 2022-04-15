@@ -12,6 +12,8 @@ class Blog extends React.Component {
     // Grab all filenames with extention ".md" from the posts dir under src
     const importAll = (r) => r.keys().map(r);
     const markdownFiles = importAll(require.context('../../posts',false, /\.md$/)) //the context module returns a function 
+    .sort().reverse();
+
     return markdownFiles;
   }
   
@@ -30,11 +32,13 @@ class Blog extends React.Component {
   render () {
     return(
       <div>
-        <div className="columns">
+        <div className="columns is-centered">
           <div className="column is-one-third">
             {
               this.state.posts.map((post, idx) => (
-                <BlogCard title={idx} content={post}/>
+                <div className='block'>
+                  <BlogCard id={idx} content={post}/>
+                </div>
               ))
             }
           </div> 
