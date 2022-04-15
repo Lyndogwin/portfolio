@@ -22,11 +22,9 @@ class BlogCard extends React.Component {
           <article className="media">
             <div className="media-content">
               <div className="content">
-                <p>
                   <ReactMarkdown remarkPlugins={[remarkGfm]}>
                     {this.state.content}
                   </ReactMarkdown>
-                </p>
               </div>
             </div>
           </article>
