@@ -36,7 +36,7 @@ class Blog extends React.Component {
     return(
       <div>
         <div className="columns is-centered">
-          <div className="column is-one-third">
+          <div className="column is-half">
             {
               this.state.posts.map((post, idx) => (
                 <div className='block' key={idx}>
