@@ -5,7 +5,7 @@ import BlogCard from './BlogCard';
 class Blog extends React.Component {
   state = {
     posts: []
-  } 
+  }; 
   
   grabFileNames = async () => {
     console.log("Grabing posts");
@@ -18,24 +18,24 @@ class Blog extends React.Component {
       return markdownFiles;
     }catch(err){console.log(err)}
 
-  }
+  };
   
   componentDidMount = async () => {
     const markdownFiles = await this.grabFileNames();
 
     // Loop across the filenames using map, then fetch each file, then grab text, then store in array named 'posts'... ok?
     const posts = await Promise.all(markdownFiles.map((file) => fetch(file).then((res) => res.text())))
-    .catch((err) => console.error(err))
+    .catch((err) => console.error(err));
 
     this.setState({
       posts: posts
     });
-  }
+  };
   
   render () {
     return(
       <div>
-        <div className="columns is-centered">
+        <div className="columns is-narrow-mobile is-centered">
           <div className="column is-half">
             {
               this.state.posts.map((post, idx) => (
@@ -48,6 +48,6 @@ class Blog extends React.Component {
         </div>
       </div>
     )
-  }
-}
+  };
+};
 export default Blog;
