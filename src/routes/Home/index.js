@@ -1,13 +1,16 @@
 import React from 'react';
 
 class Home extends React.Component {
+  state = {
+    local: process.env.PUBLIC_URL
+  }
   render () {
     return(
       <div>
         <section className="hero is-success">
           <div className="hero-body">
             <p className="title">
-            <img src="./self_portrait.gif" width="32" height="64" alt="Logo"/>
+              <img src={this.state.local + "/self_portrait.gif"} width="32" height="64" alt="Logo"/>
               Brandon Bost 
             </p>
             <p className="subtitle">

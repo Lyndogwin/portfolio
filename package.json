@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://Lyndogwin.github.io/portfolio",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
@@ -10,9 +10,12 @@
     "emailjs-com": "^2.6.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-markdown": "^8.0.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.0",
+    "react-syntax-highlighter": "^15.5.0",
+    "remark-gfm": "^3.0.1",
     "web-vitals": "^1.1.0"
   },
   "scripts": {

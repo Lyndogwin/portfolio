@@ -57,6 +57,10 @@ class App extends React.Component {
                 Home
               </a>
 
+              <a className="navbar-item" href="/portfolio/#/blog">
+                Blog
+              </a>
+
               <a className="navbar-item" href="/portfolio/#/contact">
                 Contact 
               </a>
@@ -88,6 +92,7 @@ class App extends React.Component {
         <Router basename="/portfolio">
           <Switch>
             <Route path="/" component={Routes.Home} exact/>
+            <Route path="/blog/" component={Routes.Blog}/>
             <Route path="/contact/" component={Routes.Contact}/>
           </Switch>
         </Router>

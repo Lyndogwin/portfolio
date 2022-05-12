@@ -80,6 +80,9 @@ class Contact extends React.Component {
                 value={this.state.name}
                 placeholder="e.g Alex Smith"
               />
+              <span className="icon is-small is-left">
+                <i className="fas fa-envelope"></i>
+              </span>
             </div>
           </div>
 
